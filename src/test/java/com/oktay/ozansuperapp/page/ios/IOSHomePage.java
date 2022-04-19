@@ -17,13 +17,8 @@ public class IOSHomePage extends IOSHomePageConstants implements IHomePage {
         super(driver);
     }
 
-    public ILoginPage callLoginPage() {
-        Assert.assertTrue(isElementDisplayed(HOMEPAGETAB),
-                "Anasayfa tabı görüntülenemedi!");
-        clickElement(ACCOUNTBUTTON);
-        Assert.assertTrue(getText(LOGINBUTTON).equalsIgnoreCase("Giriş Yap"),
-                "Giriş Yap görüntülenemedi!");
-        clickElement(LOGINBUTTON);
-        return PageFactory.getInstance().createPage(ILoginPage.class);
+    @Override
+    public ILoginPage callLoginPage()  {
+        return null;
     }
 }

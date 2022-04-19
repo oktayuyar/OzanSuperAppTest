@@ -14,10 +14,11 @@ public class AndroidLoginPageConstants extends BasePageUtil {
         super(driver);
     }
 
-    protected final By EMAIL_TEXTBOX = By.id("trendyol.com:id/tyValidationTextEmail");
-    protected final By PASSWORD_TEXTBOX = By.id("trendyol.com:id/tyValidationTextPassword");
-    protected final By LOGINACTIONBUTTON = By.id("trendyol.com:id/btnTYLogin");
-    protected final By COMPANYNAMETOOLBAR = By.id("trendyol.com:id/activity_authentication_toolbar");
-    protected final By LOGOUTBUTTON = By.id("trendyol.com:id/tvLogout");
-    protected final By ERRORMESSAGE = By.id("trendyol.com:id/snackbar_text");
+    protected final String password = "123456";
+    protected final By buttonForgetMe = By.id("com.ozan.android:id/textViewForgetMe");
+    protected final By textViewHeader = By.id("com.ozan.android:id/textViewHeader");
+    protected final By inputPassword = By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText");
+    protected final By buttonForgotPassword = By.id("com.ozan.android:id/textViewForgotPassword");
+    protected final By buttonHomePage = By.id("com.ozan.android:id/bottomNavMain");
+
 }

@@ -17,25 +17,17 @@ public class AndroidLoginPage extends AndroidLoginPageConstants implements ILogi
         super(driver);
     }
 
-    public ILoginPage login(String email, String password) {
-        Assert.assertTrue(isElementDisplayed(COMPANYNAMETOOLBAR),
-                "Trendyol yazısı görüntülenemedi!");
-        setText(EMAIL_TEXTBOX,email);
-        setText(PASSWORD_TEXTBOX,password);
-        clickElement(LOGINACTIONBUTTON);
+    @Override
+    public ILoginPage login() {
+        Assert.assertTrue(isElementDisplayed(buttonForgetMe), "Forget me button could not be displayed!");
+        Assert.assertTrue(getText(textViewHeader).equals("Selam Oktay"), "Texts didn't match!");
+        Assert.assertTrue(isElementDisplayed(buttonForgotPassword), "Forgot password button could not be displayed!");
+        setText(inputPassword, password);
         return PageFactory.getInstance().createPage(ILoginPage.class);
     }
 
     public IHomePage checkSuccessfulLogin() {
-        Assert.assertTrue(isElementDisplayed(LOGOUTBUTTON),
-                "Çıkış yap butonu görüntülenemedi!");
-        clickElement(LOGOUTBUTTON);
+        Assert.assertTrue(isElementDisplayed(buttonHomePage), "Çıkış yap butonu görüntülenemedi!");
         return PageFactory.getInstance().createPage(IHomePage.class);
-    }
-
-    public ILoginPage checkUnsuccessfulLogin() {
-        Assert.assertTrue(getText(ERRORMESSAGE).contains("Hatalı e-posta adresi ya da şifre"),
-                "Hatalı e-posta adresi ya da şifre uyarısı görüntülenemedi!");
-        return PageFactory.getInstance().createPage(ILoginPage.class);
     }
 }

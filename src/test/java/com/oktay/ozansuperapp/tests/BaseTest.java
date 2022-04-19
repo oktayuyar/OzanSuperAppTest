@@ -45,13 +45,13 @@ public class BaseTest {
             if (localAndroid) {
 
                 capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
-                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android SDK built for x86");
-                capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy S9");
+                capabilities.setCapability(MobileCapabilityType.UDID, "21edc61c4c0d7ece");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
                 capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "10");
-                capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.google.android.apps.messaging");
-                capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.google.android.apps.messaging.ui.ConversationListActivity");
-                capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
+                capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.ozan.android");
+                capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, "com.ozan.android.splash.SplashActivity");
+                capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
                 capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
                 driver = new AndroidDriver<MobileElement>(new URL(APPIUM_SERVER_URL), capabilities);
                 System.out.println("Android Driver Created");
@@ -62,11 +62,11 @@ public class BaseTest {
                 capabilities.setCapability("sendKeyStrategy", "setValue");
                 capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
                 capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
-                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.3");
-                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "testinium’s iPhone");
+                capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "15.4");
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone");
                 capabilities.setCapability(MobileCapabilityType.UDID, "ec8fa4d8464e1bdf69f877bf66953167417e1ccb");
                 capabilities.setCapability("useNewWDA", false);
-                capabilities.setCapability("bundleId", "trendyol.com.trendyol");
+                capabilities.setCapability("bundleId", "com.apple.Preferences");
                 driver = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
                 System.out.println("IOS Driver Created");
 

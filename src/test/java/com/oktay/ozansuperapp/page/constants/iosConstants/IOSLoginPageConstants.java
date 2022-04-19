@@ -14,10 +14,4 @@ public class IOSLoginPageConstants extends BasePageUtil {
         super(driver);
     }
 
-    protected final By EMAIL_TEXTBOX = By.className("XCUIElementTypeTextField");
-    protected final By PASSWORD_TEXTBOX = By.className("XCUIElementTypeSecureTextField");
-    protected final By LOGINACTIONBUTTON = By.id("Giriş Yap");
-    protected final By TRENDYOLOGO = By.id("newTrendyolLogo");
-    protected final By LOGOUTBUTTON = By.id("Çıkış Yap");
-    protected final By ERRORMESSAGE = By.id("Hata");
 }

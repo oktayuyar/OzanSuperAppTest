@@ -14,9 +14,4 @@ public class IOSHomePageConstants extends BasePageUtil {
         super(driver);
     }
 
-    protected final By HOMEPAGETAB= By.id("Anasayfa");
-    protected final By ACCOUNTBUTTON= By.id("Hesabım");
-    protected final By LOGINBUTTON = By.id("Giriş Yap");
-
-
 }

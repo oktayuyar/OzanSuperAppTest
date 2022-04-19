@@ -17,25 +17,14 @@ public class IOSLoginPage extends IOSLoginPageConstants implements ILoginPage {
         super(driver);
     }
 
-    public ILoginPage login(String email, String password) {
-        Assert.assertTrue(isElementDisplayed(TRENDYOLOGO),
-                "Trendyol logosu görüntülenemedi!");
-        setText(EMAIL_TEXTBOX, email);
-        setText(PASSWORD_TEXTBOX, password);
-        clickElement(LOGINACTIONBUTTON);
-        return PageFactory.getInstance().createPage(ILoginPage.class);
+
+    @Override
+    public ILoginPage login() {
+        return null;
     }
 
+    @Override
     public IHomePage checkSuccessfulLogin() {
-        Assert.assertTrue(isElementDisplayed(LOGOUTBUTTON),
-                "Çıkış yap butonu görüntülenemedi!");
-        clickElement(LOGOUTBUTTON);
-        return PageFactory.getInstance().createPage(IHomePage.class);
-    }
-
-    public ILoginPage checkUnsuccessfulLogin() {
-        Assert.assertTrue(isElementDisplayed(ERRORMESSAGE),
-                "Hata uyarısı görüntülenemedi!");
-        return PageFactory.getInstance().createPage(ILoginPage.class);
+        return null;
     }
 }

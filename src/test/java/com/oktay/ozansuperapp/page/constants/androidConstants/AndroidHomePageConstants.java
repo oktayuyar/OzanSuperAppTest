@@ -14,9 +14,4 @@ public class AndroidHomePageConstants extends BasePageUtil {
         super(driver);
     }
 
-    protected final By SEARCHTEXTVIEW= By.id("trendyol.com:id/edittext_search_view");
-    protected final By ACCOUNTBUTTON= By.id("trendyol.com:id/tab_account");
-    protected final By LOGINBUTTON = By.id("trendyol.com:id/btnBasketGuestLogin");
-
-
 }

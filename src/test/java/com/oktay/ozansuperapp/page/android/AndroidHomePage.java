@@ -18,12 +18,6 @@ public class AndroidHomePage extends AndroidHomePageConstants implements IHomePa
     }
 
     public ILoginPage callLoginPage() {
-        Assert.assertTrue(isElementDisplayed(SEARCHTEXTVIEW),
-                "Marka, ürün veya kategori ara alanı görüntülenemedi!");
-        clickElement(ACCOUNTBUTTON);
-        Assert.assertTrue(getText(LOGINBUTTON).equalsIgnoreCase("Giriş Yap"),
-                "Giriş Yap görüntülenemedi!");
-        clickElement(LOGINBUTTON);
         return PageFactory.getInstance().createPage(ILoginPage.class);
     }
 }
