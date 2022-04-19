@@ -9,11 +9,12 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>OzanSuperAppTest</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://www.ozan.com</url>
 
   <properties>
-    <maven.surefire.version>2.12.4</maven.surefire.version>
+    <appium.version>7.5.0</appium.version>
+    <cucumber.version>7.2.3</cucumber.version>
+    <maven.surefire.version>3.0.0-M6</maven.surefire.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -47,26 +48,25 @@
   </build>
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
     <dependency>
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
-      <version>7.5.0</version>
+      <version>${appium.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.maven.surefire</groupId>
       <artifactId>surefire-junit3</artifactId>
-      <version>3.0.0-M6</version>
+      <version>${maven.surefire.version}</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
-      <version>7.2.3</version>
+      <version>${cucumber.version}</version>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>7.2.3</version>
+      <version>${cucumber.version}</version>
     </dependency>
   </dependencies>
 
