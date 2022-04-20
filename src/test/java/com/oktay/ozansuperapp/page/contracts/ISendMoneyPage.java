@@ -6,4 +6,8 @@ package com.oktay.ozansuperapp.page.contracts;
 public interface ISendMoneyPage {
 
     ISendMoneyPage checkSendMoneyWithPhoneNumberPage();
+
+    ISendMoneyPage sendMoneyWithMissingPhoneNumber();
+
+    ISendMoneyPage sendMoneyWithInvalidPhoneNumber();
 }

@@ -23,8 +23,20 @@ public class SendMoneyTest {
         createPage(ISendMoneyPage.class).checkSendMoneyWithPhoneNumberPage();
     }
 
+    @Then("Check send money with missing phone number")
+    public void checkSendMoneyWithMissingPhoneNumber() {
+        createPage(ISendMoneyPage.class).sendMoneyWithMissingPhoneNumber();
+    }
+
+    @Then("Check send money with invalid phone number")
+    public void checkSendMoneyWithInvalidPhoneNumber() {
+        createPage(ISendMoneyPage.class).sendMoneyWithInvalidPhoneNumber();
+    }
+
     private <T> T createPage(Class<T> pageType) {
         return PageFactory.getInstance().createPage(pageType);
     }
+
+
 
 }

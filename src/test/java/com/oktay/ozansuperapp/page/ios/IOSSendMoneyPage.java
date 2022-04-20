@@ -16,4 +16,14 @@ public class IOSSendMoneyPage extends IOSSendMoneyPageConstants implements ISend
     public ISendMoneyPage checkSendMoneyWithPhoneNumberPage() {
         return null;
     }
+
+    @Override
+    public ISendMoneyPage sendMoneyWithMissingPhoneNumber() {
+        return null;
+    }
+
+    @Override
+    public ISendMoneyPage sendMoneyWithInvalidPhoneNumber() {
+        return null;
+    }
 }

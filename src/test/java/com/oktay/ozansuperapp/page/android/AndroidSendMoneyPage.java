@@ -21,7 +21,27 @@ public class AndroidSendMoneyPage extends AndroidSendMoneyPageConstants implemen
         Assert.assertTrue(isElementDisplayed(buttonClose), "close button could not be displayed!");
         Assert.assertTrue(isElementDisplayed(buttonBack), "back button could not be displayed!");
         Assert.assertTrue(getText(textTitleSendMoney).equals(titleSendMoney), "title not match!");
+        Assert.assertTrue(getText(textPageHeader).equals(pageHeader), "page header not match!");
+        Assert.assertTrue(isElementDisplayed(inputCountryCode), "input country code could not be displayed!");
+        Assert.assertTrue(isElementDisplayed(inputPhoneNumber), "input phone number could not be displayed!");
+        Assert.assertTrue(isElementDisplayed(buttonContacts), "contacts button could not be displayed!");
+        Assert.assertTrue(isElementDisplayed(buttonContinue), "continue button could not be displayed!");
         return PageFactory.getInstance().createPage(ISendMoneyPage.class);
     }
+
+    @Override
+    public ISendMoneyPage sendMoneyWithMissingPhoneNumber() {
+        setText(inputPhoneNumber, missingPhoneNumber);
+        Assert.assertFalse(isElementEnabled(buttonContinue), "continue button enabled!");
+        return PageFactory.getInstance().createPage(ISendMoneyPage.class);
+    }
+
+    @Override
+    public ISendMoneyPage sendMoneyWithInvalidPhoneNumber() {
+        setText(inputPhoneNumber, invalidPhoneNumber);
+        Assert.assertFalse(isElementEnabled(buttonContinue), "continue button enabled!");
+        return PageFactory.getInstance().createPage(ISendMoneyPage.class);
+    }
+
 
 }

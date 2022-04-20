@@ -57,7 +57,16 @@ public class BasePageUtil {
             Assert.fail(selector + " element not found!");
         }
         return true;
+    }
 
+    public boolean isElementEnabled(By selector) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            return wait.until(ExpectedConditions.presenceOfElementLocated(selector)).isEnabled();
+        } catch (Exception e) {
+            Assert.fail(selector + " element not found!");
+        }
+        return true;
     }
 
     public void closeKeyboard() {
