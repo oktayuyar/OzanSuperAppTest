@@ -3,7 +3,7 @@ package com.oktay.ozansuperapp.page.android;
 import com.oktay.ozansuperapp.base.PageFactory;
 import com.oktay.ozansuperapp.page.constants.androidConstants.AndroidHomePageConstants;
 import com.oktay.ozansuperapp.page.contracts.IHomePage;
-import com.oktay.ozansuperapp.page.contracts.ILoginPage;
+import com.oktay.ozansuperapp.page.contracts.ISendMoneyPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import org.testng.Assert;
@@ -17,7 +17,13 @@ public class AndroidHomePage extends AndroidHomePageConstants implements IHomePa
         super(driver);
     }
 
-    public ILoginPage callLoginPage() {
-        return PageFactory.getInstance().createPage(ILoginPage.class);
+    @Override
+    public ISendMoneyPage openSendMoneyWithPhoneNumberPage() {
+        clickElement(buttonSendMoneyQuickAction);
+        Assert.assertTrue(isElementDisplayed(titleSelectTypeOfSendMoney), "Select Type of Send Money title could not be displayed!");
+        clickElement(buttonSendMoneyWithPhoneNumber);
+        clickElement(buttonSendMoneyNext);
+        return PageFactory.getInstance().createPage(ISendMoneyPage.class);
     }
+
 }

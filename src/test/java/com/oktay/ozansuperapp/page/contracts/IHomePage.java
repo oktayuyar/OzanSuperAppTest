@@ -5,5 +5,5 @@ package com.oktay.ozansuperapp.page.contracts;
  */
 public interface IHomePage {
 
-    ILoginPage callLoginPage();
+    ISendMoneyPage openSendMoneyWithPhoneNumberPage();
 }

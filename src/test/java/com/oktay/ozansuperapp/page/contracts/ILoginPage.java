@@ -5,7 +5,6 @@ package com.oktay.ozansuperapp.page.contracts;
  */
 public interface ILoginPage {
 
-
     ILoginPage  login();
     IHomePage checkSuccessfulLogin();
 }

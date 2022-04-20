@@ -26,7 +26,7 @@ public class BasePageUtil {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.presenceOfElementLocated(selector)).click();
         } catch (Exception e) {
-            Assert.fail(selector + " elementi bulunamadı!");
+            Assert.fail(selector + " element not found!");
         }
     }
 
@@ -35,7 +35,7 @@ public class BasePageUtil {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             wait.until(ExpectedConditions.presenceOfElementLocated(selector)).sendKeys(text);
         } catch (Exception e) {
-            Assert.fail(selector + " elementi bulunamadı!");
+            Assert.fail(selector + " element not found!");
         }
     }
 
@@ -44,7 +44,7 @@ public class BasePageUtil {
             WebDriverWait wait = new WebDriverWait(driver, 5);
             return wait.until(ExpectedConditions.presenceOfElementLocated(selector)).getText();
         } catch (Exception e) {
-            Assert.fail(selector + " elementi bulunamadı!");
+            Assert.fail(selector + " element not found!");
         }
         return driver.findElement(selector).getText();
     }
@@ -54,7 +54,7 @@ public class BasePageUtil {
             WebDriverWait wait = new WebDriverWait(driver, 10);
             return wait.until(ExpectedConditions.presenceOfElementLocated(selector)).isDisplayed();
         } catch (Exception e) {
-            Assert.fail(selector + " elementi bulunamadı!");
+            Assert.fail(selector + " element not found!");
         }
         return true;
 

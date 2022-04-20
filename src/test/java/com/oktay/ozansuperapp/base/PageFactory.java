@@ -2,10 +2,13 @@ package com.oktay.ozansuperapp.base;
 
 import com.oktay.ozansuperapp.page.android.AndroidHomePage;
 import com.oktay.ozansuperapp.page.android.AndroidLoginPage;
+import com.oktay.ozansuperapp.page.android.AndroidSendMoneyPage;
 import com.oktay.ozansuperapp.page.contracts.IHomePage;
 import com.oktay.ozansuperapp.page.contracts.ILoginPage;
+import com.oktay.ozansuperapp.page.contracts.ISendMoneyPage;
 import com.oktay.ozansuperapp.page.ios.IOSHomePage;
 import com.oktay.ozansuperapp.page.ios.IOSLoginPage;
+import com.oktay.ozansuperapp.page.ios.IOSSendMoneyPage;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -39,6 +42,10 @@ public class PageFactory {
             {
                 return (T) new AndroidLoginPage(androidDriver);
             }
+            else if (pageType.isAssignableFrom(ISendMoneyPage.class))
+            {
+                return (T) new AndroidSendMoneyPage(androidDriver);
+            }
         }
         else
         {
@@ -51,6 +58,10 @@ public class PageFactory {
             else if(pageType.isAssignableFrom(ILoginPage.class))
             {
                 return (T) new IOSLoginPage(iosDriver);
+            }
+            else if (pageType.isAssignableFrom(ISendMoneyPage.class))
+            {
+                return (T) new IOSSendMoneyPage(iosDriver);
             }
         }
         return null;

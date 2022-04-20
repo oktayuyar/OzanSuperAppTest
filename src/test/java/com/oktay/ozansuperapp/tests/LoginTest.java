@@ -1,7 +1,6 @@
 package com.oktay.ozansuperapp.tests;
 
 import com.oktay.ozansuperapp.base.PageFactory;
-import com.oktay.ozansuperapp.page.contracts.IHomePage;
 import com.oktay.ozansuperapp.page.contracts.ILoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -22,11 +21,8 @@ public class LoginTest {
         createPage(ILoginPage.class).checkSuccessfulLogin();
     }
 
-
     private <T> T createPage(Class<T> pageType) {
         return PageFactory.getInstance().createPage(pageType);
     }
-
-
 
 }
